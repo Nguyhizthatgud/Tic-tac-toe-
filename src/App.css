@@ -1,0 +1,113 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App h1 {
+  color: #213547;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.game-info {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: gradient(to right, #7e878d, #2ecc71);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 4rem;
+  color: #c2cf0c;
+  margin-bottom: 1rem;
+}
+.reset-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #535bf2;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.board-row {
+  display: contents;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square:hover:not(:disabled) {
+  background-color: #f9f9f9;
+  border-color: #646cff;
+  transform: scale(1.05);
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+/* Different colors for X and O */
+.square:not(:empty) {
+  color: #213547;
+}
+
+.square:contains("X") {
+  color: #e74c3c;
+}
+
+.square:contains("O") {
+  color: gradient(to right, #3498db, #2ecc71);
+}
